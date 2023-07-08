@@ -247,24 +247,11 @@ endfunction
 
 function! s:copyFilePathUnderCursor() abort
   let s:yanked = [trim(getline('.'))]
-  echo 'Selected '.s:yanked[0]
 endfunction
 
 function! s:copyVisualSelection() abort
   let lines = s:getVisualSelection()
   let s:yanked = lines
-
-  let msg = 'Selected:'
-  for file in lines
-    " Print a nicely formatted message:
-    "
-    " @example:
-    " Selected:
-    " - file/path
-    " - another/file/path
-    let msg = msg."\n- ".file
-  endfor
-  echo msg
 endfunction
 
 function! s:logError(error) abort
