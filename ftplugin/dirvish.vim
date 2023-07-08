@@ -268,34 +268,3 @@ nnoremap <silent><buffer> <Plug>(dovish_yank) :<C-U> call <SID>copyFilePathUnder
 xnoremap <silent><buffer> <Plug>(dovish_yank) :<C-U> call <SID>copyVisualSelection()<CR>
 nnoremap <silent><buffer> <Plug>(dovish_copy) :<C-U> call <SID>copyYankedItemToCurrentDirectory()<CR>
 nnoremap <silent><buffer> <Plug>(dovish_move) :<C-U> call <SID>moveYankedItemToCurrentDirectory()<CR>
-
-if !exists("g:dirvish_dovish_map_keys")
-  let g:dirvish_dovish_map_keys = 1
-endif
-
-if g:dirvish_dovish_map_keys
-  if !hasmapto('<Plug>(dovish_create_file)', 'n')
-    execute 'nmap <silent><buffer> a <Plug>(dovish_create_file)'
-  endif
-  if !hasmapto('<Plug>(dovish_create_directory)', 'n')
-    execute 'nmap <silent><buffer> A <Plug>(dovish_create_directory)'
-  endif
-  if !hasmapto('<Plug>(dovish_delete)', 'n')
-    execute 'nmap <silent><buffer> dd <Plug>(dovish_delete)'
-  endif
-  if !hasmapto('<Plug>(dovish_rename)', 'n')
-    execute 'nmap <silent><buffer> r <Plug>(dovish_rename)'
-  endif
-  if !hasmapto('<Plug>(dovish_yank)', 'n')
-    execute 'nmap <silent><buffer> yy <Plug>(dovish_yank)'
-  endif
-  if !hasmapto('<Plug>(dovish_yank)', 'v')
-    execute 'xmap <silent><buffer> yy <Plug>(dovish_yank)'
-  endif
-  if !hasmapto('<Plug>(dovish_copy)', 'n')
-    execute 'nmap <silent><buffer> pp <Plug>(dovish_copy)'
-  endif
-  if !hasmapto('<Plug>(dovish_move)', 'n')
-    execute 'nmap <silent><buffer> PP <Plug>(dovish_move)'
-  endif
-endif
